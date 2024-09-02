@@ -10,6 +10,4 @@ int main (){
  printf("Informe o numero selecionado:");
  scanf("%f", &num);
 
-num2 = nu
-    return 0;
 }
