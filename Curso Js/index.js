@@ -1,5 +1,5 @@
 //this is my first javascript code!
-console.log('Hello World')
+//console.log('Hello World')
 
 //------VARIABLES----------------------------------------------------------------------
 //let name = 'Mosh';
@@ -158,7 +158,7 @@ console.log('Hello World')
 // ---------------------------------------------------------------------------------------
 
 // ------ COMPARISON OPERATORS -----------------------------------------------------------
-let x =1;
+//let x =1;
 
     //RELATIONAL OPERATORS
             /*
@@ -289,5 +289,313 @@ let x =1;
 
             console.log(a);
             console.log(b);
+            */
+// ---------------------------------------------------------------------------------------
+
+// ------ CONDITIONAL STATEMENTS ---------------------------------------------------------
+// IF...ELSE / SWITCH...CASE
+
+    // If...ELSE Example:
+    // If hour is between 6am and 12pm shows 'Good Morning!'
+    // If it is between 12pm and 6pm shows 'Good afternoon!'
+    // Otherwise shows 'Good Evening!'
+            /*
+            if (condition){
+                statement
+            } else if (another condition){
+                statement
+            }
+            ...
+            else if (another condition){
+                statement
+            } else{
+                last condition
+            }
+            */
+
+            /*
+            let hour =10;
+            if (hour >= 6 && hour < 12){
+                console.log('Good Morning!');
+            } else if (hour >= 12 && hour < 18){
+                console.log('Good Afternoon!');
+            } else{
+                console.log('Good Evening!');
+            }
+            */
+
+    //SWITCH...CASE Example:
+            /*
+            let role = 'guest';
+            switch(role){
+                case 'guest':
+                    console.log('Guest User');
+                    break;
+                case 'moderator':
+                    console.log('Moderator User');
+                    break;
+                default:
+                    console.log('Unknown User');
+            }
+            */
+// ---------------------------------------------------------------------------------------
+
+
+// ------ LOOPS --------------------------------------------------------------------------
+// FOR / WHILE / DO..WHILE / FOR...IN / FOR...OF
+
+// FOR
+            /*
+            for(initialExpression; condition; incrementExpression){
+                statement;
+            }
+            */
+
+            /*
+            for(let i =0; i<5; i++){
+                console.log('Hello World!', i);
+            }
+            */
+
+            /*
+            for(let i = 5; i>=1; i--){
+                if(i%2!==0)console.log(i);
+            }
+            */
+
+// WHILE
+            /*
+            let i = 0
+            while (condition){
+            statement; i++;
+            }
+            */
+
+            /*
+            let i=0;
+            while(i<=5){
+                if(i%2!==0)console.log(i);
+                i++;
+            }
+            */
+
+//DO...WHILE
+
+//Do..while will always execute the code onde time before verify if the condition is met or not.
+
+            /*
+            let i =0;
+            do{
+                statement;
+                i++
+            }while (condition);
+            */
+
+            /*
+            let i =0;
+            do{
+                if(i%2!==0)console.log(i);
+                i++
+            }while (i<=5);
+            */
+
+//INFINITE LOOPS
+
+            /*
+            let i=0;
+            while(i<5){
+                console.log(i);
+            }
+            */
+
+            /*
+            while(true){
+                console.log(i);
+            }
+            */
+
+            /*
+            let i = 0;
+            do {
+            console.log(i);
+            } while (x<5);
+            */
+
+            /*
+            for(let i=0; i<10;) {
+            console.log(i);
+            }
+            */
+
+
+//FOR...IN
+            /*
+            const person ={
+                name: 'Mosh',
+                age: 30
+            };
+
+            for (let key in person) {
+                console.log(key, person[key]);
+            }
+
+            const colors = ['red', 'green', 'blue'];
+            for (let index in colors){
+                console.log(index, colors[index]);
+            }
+            */
+            
+
+//FOR...OF
+            /*
+            for (let color of colors){
+                console.log(color);
+            }
+            */
+
+
+//BREAK AND CONTINUE
+            /*
+            let i=0;
+            while(i<=10){
+                /*
+                if (i === 5){ 
+                    break;     <-- Breaks out of the loop and continue executing the rest of the code
+                }
+                */
+
+                /*
+                if (i%2 ===0){
+                    i++;
+                    continue; <-- return to the start of the loop (while)
+                }
+                
+            }
+            */
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 37-----------------------------------------------------------------------
+// Write a function that takes two numbers and returns the maximum of the two.
+//let number = max(4,7);
+//console.log(number);
+
+            /*function max(num1, num2){
+                if (num1>num2){
+                    return num1;
+                } else if (num2>num1){
+                    return num2;
+                } else {
+                    return 'the numbers are equal';
+                }    
+            }
+            */
+
+            /*function max(num1, num2){
+                if (num1>num2) return num1; <- if num1 is greater than num2 the program will stop here and jump out of the if.
+                else return num2; <-- So there is no need of another else here.
+            }
+            */
+
+            /*function max(num1, num2){
+                if (num1>num2) return num1;
+                return num2;
+}
+*/
+
+// Here we can improve the code using the conditional operator (condition) ? num1 : num2
+            /*function max(num1, num2){
+                return(num1 >num2) ? num1 ; num2;
+            }
+            */
+
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 38---------------------------------------------------------------------
+//Make a function that reads an image width and height to discover if the image is landscape 
+//or portait
+
+            /*console.log(isLandscape(800,900));
+            function isLandscape(width, height){
+                return (width > height);
+            }
+            */
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 39---------------------------------------------------------------------
+// FizzBuzz algorithm - if the number is divisible by 3 get FIZZ, if is divisible by 5 get BUZZ
+// if is divisible by 3 and 5 get FizzBuzz and if is not divisible neither by 3 or 5, get the number,
+// if the number is not a number get the message 'not a number'
+
+            /*const output = FizzBuzz(15);
+            console.log(output);
+
+            function FizzBuzz(input){
+                if (typeof input !=='number') return NaN;
+                if ((input % 3 === 0)&&(input % 5 === 0)) return 'FizzBuzz';
+                if (input % 3 === 0) return 'Fizz';
+                if (input % 5 === 0) return 'Buzz';
+                return input;
+            }
+            */
+           
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 40---------------------------------------------------------------------
+//Speed limit = 70, for every 5 km more than the limit the driver should get 1 point, when the points are 
+//equal or greater than 12, the license should be suspended
+            /*
+            checkSpeed();
+            function checkSpeed(speed){
+                const speedLimit = 70;
+                const kmPerPoint = 5
+                if (speed <= speedLimit+kmPerPoint ) console.log('ok');
+                else{
+                    let points = math.floor((speed - speedLimit)/kmPerPoint);
+                    if (points >= 12) console.log('License Suspended');
+                    else console.log('Points', points);
+                }
+
+            }
+            */
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 41---------------------------------------------------------------------
+            /*
+            showNumebers(10);
+            function showNumebers(limit){
+                for (i=0; i<=limit; i++){
+                    const message = (i%2===0) ? 'EVEN' : 'ODD';
+                    console.log(i,message);
+                }
+            }
+            */
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 42---------------------------------------------------------------------
+            /*
+            function countTruthy(array){
+                let count = 0;
+                for (let value of array)
+                    if (value) count++;
+                return count;
+            }
+            */    
+// ---------------------------------------------------------------------------------------
+
+// ------ EXERCISE 43---------------------------------------------------------------------
+            /*
+            const movie = {
+                title: 'a',
+                releaseYear: 2002,
+                rating: 5,
+                director: 'b'
+            };
+
+            function showProperties(obj){
+                for (let key in obj){
+                    if (typeof obj[key] === 'string')
+                        console.log(key, obj[key]);
+                }
+            }
             */
 // ---------------------------------------------------------------------------------------
